@@ -1,0 +1,37 @@
+<div class="container">
+    <form [formGroup]="singUpForm">
+        <div class="form-row mt-3 mb-3">
+          <div class="col">
+            <input type="text" formControlName="fName" class="form-control" placeholder="First name">
+            <small class="invalid" *ngIf="(submitted|| singUpForm.get('fName').touched)&& singUpForm.get('fName').hasError('required')">
+                Please enter first name.
+            </small>
+          </div>
+          <div class="col">
+            <input type="text" formControlName="lName" class="form-control" placeholder="Last name">
+            <small class="invalid" *ngIf="(submitted|| singUpForm.get('lName').touched)&& singUpForm.get('lName').hasError('required')">
+                Please enter last name.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-row mt-3 mb-3">
+            <div class="col">
+              <input type="email" formControlName="email" class="form-control" placeholder="Email">
+              <small class="invalid" *ngIf="(submitted|| singUpForm.get('email').touched)&& singUpForm.get('email').hasError('required')">
+                Please enter a email id.
+            </small>
+            <small class="invalid" *ngIf="(submitted|| singUpForm.get('email').touched)&& singUpForm.get('email').hasError('pattern')">
+                Please enter a valid email id.
+            </small>
+            </div>
+            <div class="col">
+              <input type="password" formControlName="password" class="form-control" placeholder="Password">
+              <small class="invalid" *ngIf="(submitted|| singUpForm.get('password').touched)&& singUpForm.get('password').hasError('required')">
+                Please enter password.
+            </small>
+            </div>
+          </div>
+          <button class="btn btn-outline-primary m-3" [disabled]='singUpForm.invalid' (click)='save()'>Sign-Up</button>
+      </form>
+</div>
