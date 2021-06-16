@@ -25,7 +25,7 @@ export class UserDetailsComponent implements OnInit {
 
   getUserdetails(){
     this.apiService.getSingleUser(this.id).subscribe(res=>{
-      console.log(res);
+      // console.log(res);
       this.userData=res['data']
       
     })

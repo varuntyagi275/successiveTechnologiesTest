@@ -24,9 +24,9 @@ pageEvent:PageEvent
 
 
   getUserListing(){
-    console.log('this time', this.page, this.count)
+    // console.log('this time', this.page, this.count)
     this.apiService.getUserListing(this.page, this.count).subscribe(res=>{
-      console.log(res)
+      // console.log(res)
       if(res['data'].length>0){
         this.userLst=res['data'],
         this.length=res['total']
@@ -36,7 +36,7 @@ pageEvent:PageEvent
 
 
   handlePage(e):PageEvent{
-    console.log(e);
+    // console.log(e);
     if(e.pageIndex==0 && e.previousPageIndex==1){
       this.page=1;
       
